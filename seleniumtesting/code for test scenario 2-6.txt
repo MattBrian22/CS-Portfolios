@@ -1,0 +1,113 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+# Launch the browser
+webdriver = webdriver.Edge()  # Replace with the appropriate browser driver (e.g., Chrome, Firefox)
+
+# Test Steps
+try:
+    # Step 1: Open the portal
+    webdriver.get("https://digitalservices.dglapm.id/documentation/jwt-signatures")  # Replace with the URL of the web page containing "JWT Signatures"
+
+    # Step 2: Find the "JWT Signatures" element
+    jwt_signatures_element = WebDriverWait(webdriver, 10).until(
+        EC.visibility_of_element_located((By.XPATH, "//*[@id='root']/section/main/div/div[2]/div/div[3]/div[2]/div/span"))
+    )
+
+    # Verify if "JWT Signatures" is displayed
+    if jwt_signatures_element.is_displayed():
+        print("Berhasil menampilkan JWT Signatures sesuai dengan bahasa pemrograman yang dipilih yaitu PHP")
+    else:
+        print("Gagal menampilkan JWT Signatures sesuai dengan bahasa pemrograman yang dipilih yaitu PHP")
+
+except Exception as e:
+    print("Test Failed with Exception:", e)
+
+    # Step 4: Find and Click the "Copy" button
+    copy_button = WebDriverWait(webdriver, 10).until(
+        EC.element_to_be_clickable((By.XPATH, "//*[@id='root']/section/main/div/div[2]/div/div[4]/div[3]/div/div/button"))
+    )
+    copy_button.click()
+
+    # Verification 2: Add a delay to allow time for the copy action to occur (you can add explicit verification here if needed)
+    WebDriverWait(webdriver, 5).until(EC.alert_is_present())
+    alert = webdriver.switch_to.alert
+    assert "Copied to clipboard" in alert.text, "Copy action failed."
+
+    # If the script reaches this point without raising an exception, the test case is successful.
+    print("Test: Copy Button - PASSED")
+    print("Test: Show Code Snippet Button - PASSED")
+
+except Exception as e:
+    # If any step fails, the test case is considered failed.
+    print("Test: Show Code Snippet Button - FAILED")
+    print(f"Error: {str(e)}")
+
+finally:
+    # Close the browser after the test completes, regardless of pass/fail
+    webdriver.quit()
+
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+# Launch the browser
+webdriver = webdriver.Edge()  # Replace with the appropriate browser driver (e.g., Chrome, Firefox)
+
+# Test Steps
+try:
+    # Step 1: Open the portal
+    webdriver.get("https://digitalservices.dglapm.id/documentation/jwt-signatures")  # Replace with the URL of the web page containing "JWT Signatures"
+
+    # Step 2: Find the "JWT Signatures" element
+    jwt_signatures_element = WebDriverWait(webdriver, 10).until(
+        EC.visibility_of_element_located((By.XPATH, "//*[@id='root']/section/main/div/div[2]/div/div[3]/div[2]/div/span"))
+    )
+
+    # Verify if "JWT Signatures" is displayed
+    if jwt_signatures_element.is_displayed():
+        print("Berhasil menampilkan JWT Signatures.")
+    else:
+        print("Gagal menampilkan JWT Signatures.")
+
+    # Step 3: Check for the selected programming language
+    selected_language_element = WebDriverWait(webdriver, 10).until(
+        EC.visibility_of_element_located((By.CSS_SELECTOR, "#root > section > main > div > div.ant-col.ant-col-xs-24.ant-col-xl-18 > div > div.ant-row.requestHeaderContainer > div:nth-child(2) > div > div > span.ant-select-selection-search"))
+    )
+    selected_language = selected_language_element.text
+
+    # Assuming the selected language is "PHP"
+    if "PHP" in selected_language:
+        print("Selected programming language is PHP.")
+    else:
+        print("Selected programming language is not PHP.")
+
+
+    # Step 4: Find and Click the "Copy" button
+    copy_button = WebDriverWait(webdriver, 10).until(
+        EC.element_to_be_clickable((By.XPATH, "//*[@id='root']/section/main/div/div[2]/div/div[4]/div[3]/div/div/button"))
+    )
+    copy_button.click()
+
+    # Verification 2: Add a delay to allow time for the copy action to occur (you can add explicit verification here if needed)
+    WebDriverWait(webdriver, 5).until(EC.alert_is_present())
+    alert = webdriver.switch_to.alert
+    assert "Copied to clipboard" in alert.text, "Copy action failed."
+
+    # If the script reaches this point without raising an exception, the test case is successful.
+    print("Test: Copy Button - PASSED")
+    print("Test: Show Code Snippet Button - PASSED")
+
+except Exception as e:
+    # If any step fails, the test case is considered failed.
+    print("Test: Show Code Snippet Button - FAILED")
+    print(f"Error: {str(e)}")
+
+finally:
+    # Close the browser after the test completes, regardless of pass/fail
+    webdriver.quit()
+

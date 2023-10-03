@@ -1,0 +1,76 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+# Launch the browser
+driver = webdriver.Edge()  # Replace with the appropriate browser driver (e.g., Firefox)
+
+try:
+    # Step 1: Akses Portal Digital Services
+    driver.get("https://digitalservices.dglapm.id/")  # Replace with the URL of the Digital Services Portal
+
+    print("Step 1: Portal Digital Services opened successfully.")
+
+    # Step 3: Pilih Lainnya (ID) / Miscellaneous (EN)
+language_selector_link = WebDriverWait(driver, 10).until(
+    EC.element_to_be_clickable((By.CSS_SELECTOR, "#root > section > div > header > div:nth-child(3) > div > a.ant-dropdown-trigger.text-upper > span"))
+)
+language_selector_link.click()
+
+
+    # Step 4: Pilih Miscellaneous
+    miscellaneous_link = WebDriverWait(driver, 10).until(
+        EC.element_to_be_clickable((By.XPATH, "//*[@id='root']/section/main/div/div[1]/div/ul/li[5]/div"))
+    )
+    miscellaneous_link.click()
+
+    print("Step 4: Miscellaneous link clicked.")
+
+    # Step 5: Pilih Check List
+    checklist_link = WebDriverWait(driver, 10).until(
+        EC.element_to_be_clickable((By.XPATH, "//*[@id='rc-menu-uuid-24321-2-miscellaneous-popup']/li[3]"))
+    )
+    checklist_link.click()
+
+    print("Step 5: Check List link clicked.")
+
+    # Wait for a few seconds to allow time for the page to load completely
+    WebDriverWait(driver, 5).until(
+        EC.title_contains("Check List")
+    )
+
+    # Verify that the correct page related to "Check List" is displayed.
+    if "Check List" in driver.title:
+        print("Check List page is displayed successfully.")
+    else:
+        print("Check List page is not displayed as expected.")
+
+    image_upload_element = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.ID, "upload_image_input"))
+    )
+    image_path = r"C:\Users\user\Downloads\api.jpg"  # Replace with the actual path of the image you want to upload
+    image_upload_element.send_keys(image_path)
+
+    print("Step 7: Image uploaded successfully.")
+
+    # Step 7: Verify Display of Uploaded Image
+    uploaded_image_element = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.ID, "uploaded_image"))
+    )
+    if uploaded_image_element.is_displayed():
+        print("Image is displayed successfully.")
+    else:
+        print("Image is not displayed as expected.")
+
+    # Step 8: Check Uploaded Image's Link (if applicable)
+    # ... (additional code to check the link)
+
+    # ... (additional validation steps as needed)
+
+except Exception as e:
+    print("Test Failed with Exception:", e)
+
+finally:
+    # Close the browser after the test completes
+    driver.quit()

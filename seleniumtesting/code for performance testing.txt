@@ -1,0 +1,42 @@
+performance test buat website https://digitalservices.dglapm.id/getting-started:
+
+from selenium import webdriver
+from selenium.webdriver.edge.service import Service
+from selenium.webdriver.common.by import By
+import time
+
+# Set the path to the Microsoft Edge WebDriver executable
+driver_path = "C:/path/to/msedgedriver.exe"
+
+# Create a new instance of the Microsoft Edge WebDriver
+edge_service = Service(driver_path)
+driver = webdriver.Edge(service=edge_service)
+
+# Start the timer
+start_time = time.time()
+
+# Open the website to test
+driver.get("https://digitalservices.dglapm.id/documentation/get-started#")
+
+# Wait for the new page to load
+time.sleep(2)  # Add an arbitrary delay to simulate a wait
+
+# Calculate the elapsed time after performing certain actions
+action1_elapsed_time = time.time() - start_time
+
+# Calculate the elapsed time after performing other actions
+action2_elapsed_time = time.time() - start_time
+
+# Stop the timer and calculate the elapsed time
+end_time = time.time()
+elapsed_time = end_time - start_time
+
+# Save the test results to a Word document
+doc = Document()
+doc.add_heading('Test Results', level=1)
+doc.add_paragraph(f"Elapsed time for Action 1: {action1_elapsed_time} seconds")
+doc.add_paragraph(f"Elapsed time for Action 2: {action2_elapsed_time} seconds")
+doc.add_paragraph(f"Overall Elapsed time: {elapsed_time} seconds")
+
+# Close the browser
+driver.quit()

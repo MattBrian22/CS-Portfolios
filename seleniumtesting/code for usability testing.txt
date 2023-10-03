@@ -1,0 +1,114 @@
+Code buat registration portal:
+
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from docx import Document
+
+# Create a new instance of the Microsoft Edge WebDriver
+driver = webdriver.Edge()
+
+# Open the registration page
+driver.get("https://digitalservices.dglapm.id/register")
+
+# Test 3: Test user flows and scenarios
+try:
+    # Example 1: Signing up
+    # Perform necessary actions for sign-up process
+    # Fill in the sign-up form
+    driver.find_element(By.ID, "basic_email").send_keys("brian.tahir@gmail.com")
+    driver.find_element(By.ID, "user").send_keys("Brian")
+    driver.find_element(By.ID, "username").send_keys("BrianT22")    
+    driver.find_element(By.ID, "basic_password").send_keys("Brian007")
+    driver.find_element(By.ID, "basic_confirmpassword").send_keys("Brian007")
+
+    # Submit the form
+    driver.find_element(By.CSS_SELECTOR, "button.ant-btn-submit").click()
+    # Verify if the sign-up is successful
+    assert "Welcome" in driver.page_source, "Sign-up process failed"
+    test_result = "Test passed: Sign-up process successful"
+
+except AssertionError as e:
+    print("User flow test failed:", str(e))
+    test_result = "Test failed: " + str(e)
+
+except Exception as e:
+    print("An error occurred during user flow test:", str(e))
+    test_result = "An error occurred: " + str(e)
+
+# Take a screenshot
+driver.save_screenshot(r"C:\Users\user\OneDrive - Yayasan Budi Pekerti Luhur\Python\register.png")
+
+# Close the browser
+driver.quit()
+
+# Save the results to the Word document
+doc = Document(r"C:\Users\user\OneDrive - Yayasan Budi Pekerti Luhur\Python\hasil_test_RPA.docx")
+
+# Add a new section for the third test
+doc.add_page_break()
+
+# Add the heading and test report for the third test
+doc.add_heading('Test Results - User Flow', level=1)
+doc.add_paragraph("Hasil Test Registrasi: ")
+doc.add_paragraph(test_result)
+
+# Add the screenshot to the Word document
+doc.add_picture(r"C:\Users\user\OneDrive - Yayasan Budi Pekerti Luhur\Python\register.png")
+
+# Save the modified Word document
+doc.save(r"C:\Users\user\OneDrive - Yayasan Budi Pekerti Luhur\Python\hasil_test_RPA.docx")
+
+
+
+
+automation check buat language match:
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from docx import Document
+
+# Create a new instance of the Microsoft Edge WebDriver
+driver = webdriver.Edge()
+
+# Open the website to test
+driver.get("https://digitalservices.dglapm.id/documentation/get-started#")  # Replace with the actual website URL
+
+# Find the target element by ID
+target_element = driver.find_element(By.ID, ":0.targetLanguage")
+
+# Get the text of the element
+element_text = target_element.text
+
+# Verify the expected text is present
+expected_text = "Pilih Bahasa"
+if expected_text in element_text:
+    test_result = "Test passed: Element text matches expected text"
+    print(test_result)
+else:
+    test_result = "Test failed: Element text does not match expected text"
+    print(test_result)
+
+# Take a screenshot
+driver.save_screenshot(r"C:\Users\user\OneDrive - Yayasan Budi Pekerti Luhur\Python\screenshot.png")
+
+# Save the results to a Word document
+doc = Document(r"C:\Users\user\OneDrive - Yayasan Budi Pekerti Luhur\Python\hasil_test_RPA.docx")
+
+# Add a new section for the second test
+doc.add_page_break()
+
+# Add the heading and test report for the second test
+doc.add_heading('Hasil Test Language Match', level=1)
+doc.add_paragraph("Hasil Test: ")
+doc.add_paragraph(test_result)
+
+# Add the screenshot for the second test
+doc.add_picture(r"C:\Users\user\OneDrive - Yayasan Budi Pekerti Luhur\Python\screenshot.png")
+
+# Save the modified Word document
+doc.save(r"C:\Users\user\OneDrive - Yayasan Budi Pekerti Luhur\Python\hasil_test_RPA.docx")
+
+# Close the browser
+driver.quit()
+
