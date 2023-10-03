@@ -1,0 +1,173 @@
+/* set default font and background color */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+}
+
+.bg-light {
+  background-color: #f4cb01!important;
+}
+
+/* style for the header */
+header {
+  background-color: #f4cb01;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+.navbar-brand img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* style for the featured movies section */
+#featured-movies {
+  padding: 2rem;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movie-list > * {
+  flex: 4 1 18rem;
+  margin: 1rem;
+  background-color: #e6e5e5;
+  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
+  border-radius: 45px
+}
+
+.movie-list img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.movie-list h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.movie-list p {
+  margin-bottom: 1rem;
+}
+
+.book-now {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.book-now:hover {
+  background-color: #333;
+}
+
+/* style for the footer */
+footer {
+  background-color: #222;
+  color: #fff;
+  padding: 2rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-links {
+  margin-bottom: 1rem;
+}
+
+.social-links h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.social-links a {
+  display: inline-block;
+  margin-right: 1rem;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.social-links a:hover {
+  color: #f8f8f8;
+}
+
+.About-Cineit h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.About-Cineit p {
+  margin-bottom: 0.5rem;
+}
+
+.newsletter h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: #dbdbdb;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+
+a:hover {
+  color: #ffffff;
+}
+
+.newsletter input[type="email"] {
+  padding: 0.5rem;
+  border: none;
+  background-color: #f8f8f8;
+  border-radius: 0.25rem;
+  margin-right: 0.1rem;
+}
+
+.newsletter button[type="submit"] {
+  padding: 0.5rem 1rem;
+  background-color: #dcd4d4;
+  color: #1b0909;
+  text-decoration: none;
+  border-radius: 1rem;
+  transition: background-color 0.2s ease-in-out;
+  border: none;
+}
+
+.newsletter button[type="submit"]:hover {
+  background-color: #fff;
+  color: #A78080;
+}
+
+.footer-bottom {
+  padding: 20px 0;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #d8d8d8;
+  font-size: 14px;
+  text-align: center;
+}
+

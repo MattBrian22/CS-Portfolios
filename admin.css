@@ -1,0 +1,568 @@
+/* Admin Panel Styling */
+
+.admin-dropdown {
+  float: right;
+  font-style: normal;
+  margin-left: 3px;
+  font-size: 13px;
+  position: absolute;
+  right: 15px;
+  top: 25px;
+  margin: 0;
+}
+
+.admin-section-header {
+  color: #fff;
+  width: 100%;
+  background-color: #3a3a3a;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+
+.admin-user-avatar {
+  width: 65px;
+}
+
+.admin-login-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.admin-login-info i {
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.admin-login-info img {
+  margin-left: 10px;
+}
+
+.admin-notifications {
+  padding: 10px 0;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  background-color: #3a3a3a;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.52);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.52);
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.52);
+  position: fixed;
+  z-index: 10000;
+  top: 75px;
+  right: 10px;
+  transition: all 0.5s ease;
+}
+
+.admin-notifications > h4 {
+  padding: 0 10px;
+}
+
+.admin-notification {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-gap: 10px;
+  padding: 10px 10px;
+  background-color: #3a3a3a;
+}
+
+.admin-notification:hover {
+  background-color: #4b4b4b;
+}
+
+.admin-notification .notification-img {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
+.notification-img img {
+  width: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.admin-notification h4 {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.admin-notification p {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.admin-logo {
+  padding: 20px 10px;
+  background-color: #5f5f5f;
+}
+
+.admin-container {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+
+.admin-section1 {
+  background-color: #3a3a3a;
+  height: 100vh;
+}
+
+.admin-section1 ul li {
+  width: 100%;
+  padding: 20px 10px;
+  background-color: #3a3a3a;
+  color: #fff;
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.admin-section1 ul li:hover {
+  background-color: #6e5a11;
+  color: #fff;
+  border-left: #fff 3px solid;
+}
+
+.admin-section1 ul ul {
+  background-color: #4e4e4e;
+  margin-bottom: 1px;
+}
+
+.admin-section1 ul ul li {
+  background-color: #4e4e4e;
+  margin-bottom: 1px;
+}
+
+.admin-section1 ul li i {
+  margin-right: 20px;
+}
+
+.admin-section2 {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.admin-section-column {
+  flex: 100%;
+  max-width: 100%;
+  padding: 0 30px;
+}
+
+.admin-section-panel {
+  width: 100%;
+  vertical-align: middle;
+  background-color: #fff;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.admin-panel-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: 20px;
+  border-bottom: #c7c7c7 1px solid;
+}
+
+.admin-panel-section-header > h2 {
+  color: #6e6e6e;
+}
+
+.admin-panel-section-header > i {
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  height: 60px;
+  width: 60px;
+  border-radius: 10%;
+  line-height: 60px;
+  transition: all 0.5s ease;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.admin-section-panel:hover .admin-panel-section-header > i {
+  border-radius: 50%;
+}
+
+.admin-section-stats {
+  display: flex;
+  padding: 20px 0;
+}
+
+.admin-section-stats-panel {
+  flex: 25%;
+  max-width: 25%;
+  text-align: center;
+  border-right: #bdbdbd 1px solid;
+}
+
+.admin-section-stats-panel > i {
+  font-size: 30px;
+  color: white;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  line-height: 60px;
+  transition: all 0.5s ease;
+  margin-bottom: 10px;
+}
+
+.admin-panel-section-booking-item {
+  background-color: none;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  border: #969696 1px solid;
+  margin: 10px 0;
+  overflow: hidden;
+  display: flex;
+  transition: all 0.6s ease;
+}
+
+.admin-panel-section-booking-item:hover {
+  background-color: #d3d3d3;
+}
+
+.no-annot {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.admin-panel-section-booking-response i {
+  font-size: 25px;
+  height: 50px;
+  width: 50px;
+  color: #fff;
+  line-height: 50px;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+}
+
+.admin-panel-section-booking-response .accept-booking {
+  background-color: #1b9b4c;
+}
+
+.admin-panel-section-booking-response .decline-booking {
+  background-color: #dc143c;
+}
+
+.admin-panel-section-booking-info {
+  margin: 10px 10px;
+  display: flex;
+  flex: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.admin-panel-section-booking-info div:first-child {
+  border-bottom: #d3d3d3 1px solid;
+}
+
+.admin-panel-section-booking-info > div {
+  height: 100%;
+  display: flex;
+}
+
+.admin-panel-section-booking-info > div > * {
+  display: inline-block;
+  margin: auto 5px;
+}
+
+.admin-panel-section-booking-info > div .fa-circle {
+  font-size: 8px;
+}
+
+.admin-section-panel2 form {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: left;
+}
+
+.admin-section-panel2 form input {
+  border-radius: 4px;
+  border: 1px solid #6e6e6e;
+  padding: 10px;
+  width: 32%;
+  height: 42px;
+  margin: 8px 5px;
+}
+
+.admin-section-panel2 form input[type="file"] {
+  width: 59%;
+  padding: 0;
+}
+
+.admin-section-panel2 form button {
+  border-radius: 4px;
+  border: none;
+  padding: 10px;
+  margin: 10px 32px;
+  width: 49%;
+  text-align: center;
+  background-color: #a3861e;
+  color: #fff;
+  transition: all 0.7s ease;
+  cursor: pointer;
+  height: 42px;
+}
+
+.admin-section-panel2 form button:hover {
+  background-color: #b6b6b6;
+}
+
+.admin-section-panel2 form label {
+  border: none;
+  margin-left: 0; 
+  padding: 0px;
+  font-size: 22px;
+  width: 75%;
+  text-align: center;
+  color: #000;
+}
+.admin-logo {
+  padding: 20px 10px;
+  background-color: #5f5f5f;
+}
+
+.admin-container {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+
+.admin-section1 {
+  background-color: #3a3a3a;
+  height: 100vh;
+}
+
+.admin-section1 ul li {
+  width: 100%;
+  padding: 20px 10px;
+  background-color: #3a3a3a;
+  color: #fff;
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.admin-section1 ul li:hover {
+  background-color: #6e5a11;
+  color: #fff;
+  border-left: #fff 3px solid;
+}
+
+.admin-section1 ul ul {
+  background-color: #4e4e4e;
+  margin-bottom: 1px;
+}
+
+.admin-section1 ul ul li {
+  background-color: #4e4e4e;
+  margin-bottom: 1px;
+}
+
+.admin-section1 ul li i {
+  margin-right: 20px;
+}
+
+.admin-section2 {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.admin-section-column {
+  flex: 100%;
+  max-width: 100%;
+  padding: 0 30px;
+}
+
+.admin-section-panel {
+  width: 100%;
+  vertical-align: middle;
+  background-color: #fff;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.admin-panel-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: 20px;
+  border-bottom: #c7c7c7 1px solid;
+}
+
+.admin-panel-section-header > h2 {
+  color: #6e6e6e;
+}
+
+.admin-panel-section-header > i {
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  height: 60px;
+  width: 60px;
+  border-radius: 10%;
+  line-height: 60px;
+  transition: all 0.5s ease;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.admin-section-panel:hover .admin-panel-section-header > i {
+  border-radius: 50%;
+}
+
+.admin-section-stats {
+  display: flex;
+  padding: 20px 0;
+}
+
+.admin-section-stats-panel {
+  flex: 25%;
+  max-width: 25%;
+  text-align: center;
+  border-right: #bdbdbd 1px solid;
+}
+
+.admin-section-stats-panel > i {
+  font-size: 30px;
+  color: white;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  line-height: 60px;
+  transition: all 0.5s ease;
+  margin-bottom: 10px;
+}
+
+.admin-panel-section-booking-item {
+  background-color: none;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  border: #969696 1px solid;
+  margin: 10px 0;
+  overflow: hidden;
+  display: flex;
+  transition: all 0.6s ease;
+}
+
+.admin-panel-section-booking-item:hover {
+  background-color: #d3d3d3;
+}
+
+.no-annot {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.admin-panel-section-booking-response i {
+  font-size: 25px;
+  height: 50px;
+  width: 50px;
+  color: #fff;
+  line-height: 50px;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+}
+
+.admin-panel-section-booking-response .accept-booking {
+  background-color: #1b9b4c;
+}
+
+.admin-panel-section-booking-response .decline-booking {
+  background-color: #dc143c;
+}
+
+.admin-panel-section-booking-info {
+  margin: 10px 10px;
+  display: flex;
+  flex: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.admin-panel-section-booking-info div:first-child {
+  border-bottom: #d3d3d3 1px solid;
+}
+
+.admin-panel-section-booking-info > div {
+  height: 100%;
+  display: flex;
+}
+
+.admin-panel-section-booking-info > div > * {
+  display: inline-block;
+  margin: auto 5px;
+}
+
+.admin-panel-section-booking-info > div .fa-circle {
+  font-size: 8px;
+}
+
+.admin-section-panel2 form {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: left;
+}
+
+.admin-section-panel2 form input {
+  border-radius: 4px;
+  border: 1px solid #6e6e6e;
+  padding: 10px;
+  width: 32%;
+  height: 42px;
+  margin: 8px 5px;
+}
+
+.admin-section-panel2 form input[type="file"] {
+  width: 59%;
+  padding: 0;
+}
+
+.admin-section-panel2 form button {
+  border-radius: 4px;
+  border: none;
+  padding: 10px;
+  margin: 10px 32px;
+  width: 49%;
+  text-align: center;
+  background-color: #a3861e;
+  color: #fff;
+  transition: all 0.7s ease;
+  cursor: pointer;
+  height: 42px;
+}
+
+.admin-section-panel2 form button:hover {
+  background-color: #b6b6b6;
+}
+
+.admin-section-panel2 form label {
+  border: none;
+  margin-left: 0; 
+  padding: 0px;
+  font-size: 22px;
+  width: 75%;
+  text-align: center;
+  color: #000;
+}
